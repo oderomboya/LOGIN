@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height Converter</title>
+    <!-- Include SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+</head>
+<body>
+    <button id="convertBtn">Convert Height</button>
+
+    <!-- Include SweetAlert JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <script>
+        document.getElementById('convertBtn').addEventListener('click', function() {
+            // Display SweetAlert input popup
+            swal({
+                text: 'Enter height in centimeters:',
+                content: 'input',
+                button: {
+                    text: 'Convert',
+                    closeModal: false,
+                },
+            })
+            .then((value) => {
+                if (!value) throw null; // If user cancels the input
+                const cm = parseFloat(value);
+                if (isNaN(cm)) throw 'Invalid input';
+                const feet = cm * 0.0328084;
+                swal(`Height in feet: ${feet.toFixed(2)}`);
+            })
+            .catch((error) => {
+                if (error) {
+                    swal('Conversion error', 'Please enter a valid number in centimeters.', 'error');
+                } else {
+                    swal.stopLoading();
+                    swal.close();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
