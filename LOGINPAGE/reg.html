@@ -4,42 +4,223 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+body {
+  font-family: poppins;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: aliceblue;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.background img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: blur(0px);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(44, 44, 51, 0.164);
+}
+
+form{
+
+border-radius: 2%;
+padding-left: 10%;
+padding-right: 10%;
+padding-bottom: 3%;
+margin-top: 10%;
+margin-left: 30%;
+margin-right: 30%;
+}
+
+input{
+  width: 100%;
+  border-radius: 2%;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;}
+
+
+#reg{
+  width: 100%;
+  height: 3rem;
+  
+}
+
+#form-heading{
+
+  text-align: center;
+  font-size: 2.1rem;
+}
+
+/* BUTTON STYLE */
+
+#home-page {
+  color: #fff;
+  font-size: 5rem;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.summary {
+  font-size: 2rem;
+}
+
+#home {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(248, 136, 45);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: transparent;
+  color: white;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+#home:hover {
+  color: #fff;
+  background: rgb(248, 136, 45);
+  box-shadow: 0 0 10px 2px rgb(241, 34, 27);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+#home:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+#home::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+#home:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+    </style>
+
     <title>Document</title>
 </head>
 <body>
-    <div class="center">
-        <h1>Register</h1>
-    </div>
-    <form method="post">
 
+    <div class="background">
+        <!-- <img src="https://c4.wallpaperflare.com/wallpaper/135/692/935/astronaut-space-black-background-artwork-hd-wallpaper-preview.jpg" alt="background image"> -->
+        <img src="https://c4.wallpaperflare.com/wallpaper/329/443/707/forest-path-fall-leaves-wallpaper-preview.jpg" alt="background">
+        <div class="overlay"></div>
+      </div>
+
+    <div class="center">
+        
+    
+    <form method="post">
+      <h1 id="form-heading">Register</h1>
         <div class="txt_field">
+          <label>Username</label>
             <input type="text" required>
             <span></span>
-            <label>Username</label>
+            
             </div>
 
             <div class="txt_field">
+              <label>Email</label>
                 <input type="email" required>
                 <span></span>
-                <label>Email</label>
+                
                 </div>
     
             <div class="txt_field">
+              <label>Password</label>
                 <input type="password" required maxlength="8">
                 <span></span>
-                <label>Password</label>
+                
                 </div>
 
     <div class="txt_field">
-     <input type="password" required maxlength="8">
-  <span></span>
- <label>Confirm Password</label>
+      <label>Confirm Password</label>
+     <input type="password" required maxlength="8">     
     </div>
+    <br>
 
 
-   <input type="submit" value="register">
+   <!-- <input type="submit" value="Register" id="reg"> -->
+
+   <button id="home"">Register</button>
+
 </form>
-
+</div>
     
 </body>
 </html>
